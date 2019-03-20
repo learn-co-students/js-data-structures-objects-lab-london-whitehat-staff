@@ -17,14 +17,16 @@ function destructivelyUpdateDriverWithKeyAndValue(driver, key, value) {
 
 //it is getting value from the test. driver[key] is saying look for the key (which = address, links to previous test), then take the value assigned to that key.
 
-function deleteFromDriverByKey(driver, name) {
+function deleteFromDriverByKey(driver, key) {
   let newdriver = Object.assign({}, driver)
-  delete newdriver[name];
+  delete newdriver[key];
   return newdriver;
 }
 
-function destructivelyDeleteFromDriverByKey(driver, name) {
-  delete driver[name];
+//key again has been passed by the test file so it know what you're talking about when you use 'key'
+
+function destructivelyDeleteFromDriverByKey(driver, key) {
+  delete driver[key];
   return driver;
 }
 
